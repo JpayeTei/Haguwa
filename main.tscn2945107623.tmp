@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bbi0gtdqqclkg"]
+
+[ext_resource type="PackedScene" uid="uid://ftprso0n4kqu" path="res://Bird/scene/player.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node3D" unique_id=1481974422]
+
+[node name="Player" parent="." unique_id=1769111243 instance=ExtResource("2_h2yge")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=3128001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068920135, -1, 0.05155945)
+use_collision = true
+size = Vector3(20.400826, 1, 12.957306)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=60099974]
+transform = Transform3D(1, 0, 0, 0, 0.0156200295, 0.999878, 0, -0.999878, 0.0156200295, 0, 5.743831, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=426959531]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.096054, 3.551344, 1.0614023)

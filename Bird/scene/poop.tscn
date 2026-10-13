@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://pgbi51am4gcb"]
+
+[ext_resource type="Script" uid="uid://dhrnqgtshpgg" path="res://script/poop.gd" id="1_rxm13"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_s8vd7"]
+radius = 0.13
+height = 2.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s8vd7"]
+radius = 0.27
+
+[node name="Poop" type="RigidBody3D" unique_id=1432487831]
+collision_layer = 4
+collision_mask = 2
+gravity_scale = 4.039
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_rxm13")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1583642316]
+transform = Transform3D(0.62650645, 0, 0, 0, 0.15554644, 0, 0, 0, 0.5425513, 0, 0, 0)
+mesh = SubResource("SphereMesh_s8vd7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1836517018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26200488, -0.009793162)
+shape = SubResource("SphereShape3D_s8vd7")
+
+[node name="Timer" type="Timer" parent="." unique_id=959591920]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

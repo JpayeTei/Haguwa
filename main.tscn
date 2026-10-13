@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bbi0gtdqqclkg"]
+
+[ext_resource type="PackedScene" uid="uid://ftprso0n4kqu" path="res://scenes/player.tscn" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://byf11towk0v5h" path="res://assets/png/checkboard.png" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://dld1ckyfqkqxh" path="res://script/debug.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://pgbi51am4gcb" path="res://Bird/scene/poop.tscn" id="4_1bvp3"]
+[ext_resource type="Shader" uid="uid://b1ykxfecgt332" path="res://Shaders/sky_shader.gdshader" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://djxfusbt6hm3b" path="res://scenes/Human.tscn" id="6_7mycd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_color = Color(0.1182294, 0.5196837, 0.3093859, 1)
+albedo_texture = ExtResource("2_lquwl")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
+shader = ExtResource("5_lquwl")
+shader_parameter/top_color = Color(0.15, 0.4, 0.75, 1)
+shader_parameter/bottom_color = Color(0.55, 0.7, 0.85, 1)
+shader_parameter/cloud_color = Color(1, 1, 1, 1)
+shader_parameter/cloud_speed = 0.2070000098325
+shader_parameter/cloud_coverage = 0.7
+shader_parameter/cloud_scale = 2.5
+shader_parameter/cloud_brightness = 1.0
+shader_parameter/cloud_sharpness = 0.3
+shader_parameter/horizon_glow = 0.5
+shader_parameter/enable_stars = false
+shader_parameter/stars_intensity = 1.0
+shader_parameter/star_color = Color(1, 1, 1, 1)
+shader_parameter/twinkle_speed = 2.0
+
+[sub_resource type="Sky" id="Sky_lquwl"]
+sky_material = SubResource("ShaderMaterial_1bvp3")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = SubResource("Sky_lquwl")
+
+[node name="Main" type="Node3D" unique_id=1481974422]
+
+[node name="Player" parent="." unique_id=1769111243 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.110632, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=3128001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068920135, -1, 0.05155945)
+use_collision = true
+collision_layer = 2
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_7mycd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=60099974]
+transform = Transform3D(1, 0, 0, 0, 0.0156200295, 0.999878, 0, -0.999878, 0.0156200295, 0, 5.743831, 0)
+
+[node name="Debug" type="Label" parent="." unique_id=148317389]
+offset_left = 88.0
+offset_top = 64.0
+offset_right = 331.0
+offset_bottom = 196.0
+text = "Speed : 0"
+script = ExtResource("3_h2yge")
+
+[node name="Poop" parent="." unique_id=1432487831 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2720369, 5.305645, 2.0755396)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1100511902]
+environment = SubResource("Environment_1bvp3")
+
+[node name="Human" parent="." unique_id=318703290 instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79067373, 6.617248)
