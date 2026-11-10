@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://riykfsmmp6c"]
+
+[ext_resource type="Script" uid="uid://bv8crficew52t" path="res://script/bird_audio.gd" id="1_akmc8"]
+[ext_resource type="AudioStream" uid="uid://cwbv4qwpgwhxt" path="res://assets/sfx/Flapping.wav" id="4_kx8j8"]
+[ext_resource type="AudioStream" uid="uid://blmuehwilm7qu" path="res://assets/sfx/Glide1.wav" id="4_serl0"]
+[ext_resource type="AudioStream" uid="uid://by2j6lh6hy7o6" path="res://assets/sfx/Flapping1.wav" id="5_0n0f7"]
+[ext_resource type="AudioStream" uid="uid://cvl5na1ukgt8c" path="res://assets/sfx/Sprint.wav" id="5_kx8j8"]
+[ext_resource type="AudioStream" uid="uid://s5wlm1fibyrd" path="res://assets/sfx/Flap1.wav" id="6_jghqk"]
+[ext_resource type="AudioStream" uid="uid://ecsmrggim8dw" path="res://assets/sfx/Flap2.wav" id="7_2ympl"]
+[ext_resource type="AudioStream" uid="uid://bjqb7ntfs7xls" path="res://assets/sfx/Flap3.wav" id="8_ggyen"]
+[ext_resource type="AudioStream" uid="uid://cw2fm6qgsxqx7" path="res://assets/sfx/Takeoff.wav" id="9_jghqk"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_piwbb"]
+playback_mode = 1
+streams_count = 1
+stream_0/stream = ExtResource("4_serl0")
+stream_0/weight = 4.83
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qdwkc"]
+playback_mode = 1
+streams_count = 1
+stream_0/stream = ExtResource("5_kx8j8")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_serl0"]
+streams_count = 5
+stream_0/stream = ExtResource("4_kx8j8")
+stream_1/stream = ExtResource("5_0n0f7")
+stream_2/stream = ExtResource("6_jghqk")
+stream_3/stream = ExtResource("7_2ympl")
+stream_4/stream = ExtResource("8_ggyen")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qexo3"]
+streams_count = 1
+stream_0/stream = ExtResource("9_jghqk")
+
+[node name="BirdAudio" type="Node" unique_id=2069602295]
+script = ExtResource("1_akmc8")
+
+[node name="FlyAudio" type="AudioStreamPlayer3D" parent="." unique_id=688044946]
+stream = SubResource("AudioStreamRandomizer_piwbb")
+volume_db = -0.751
+max_db = 0.183
+
+[node name="SprintAudio" type="AudioStreamPlayer3D" parent="." unique_id=672978943]
+stream = SubResource("AudioStreamRandomizer_qdwkc")
+volume_db = -6.761
+max_db = -3.198
+
+[node name="FlapAudio" type="AudioStreamPlayer3D" parent="." unique_id=50394339]
+stream = SubResource("AudioStreamRandomizer_serl0")
+volume_db = 4.507
+max_db = 6.0
+
+[node name="TakeoffAudio" type="AudioStreamPlayer3D" parent="." unique_id=1005721399]
+stream = SubResource("AudioStreamRandomizer_qexo3")

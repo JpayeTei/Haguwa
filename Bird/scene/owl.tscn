@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d4mrw6mq3khxt"]
+
+[ext_resource type="PackedScene" uid="uid://bq4a7ab1gqj7n" path="res://Bird/bird+collection.obj.gltf" id="1_nnm2r"]
+[ext_resource type="Texture2D" uid="uid://c47f1n7b5iddf" path="res://Bird/textures/textures/owl.png" id="2_ov8wo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54bv0"]
+albedo_texture = ExtResource("2_ov8wo")
+
+[node name="bird+collection_obj" unique_id=154906207 instance=ExtResource("1_nnm2r")]
+
+[node name="owl_Figure" parent="Node" parent_id_path=PackedInt32Array(2075136769) index="0" unique_id=1679421376]
+material_override = SubResource("StandardMaterial3D_54bv0")

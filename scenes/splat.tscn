@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3m04hypqtvro"]
+
+[ext_resource type="Texture2D" uid="uid://iqqrfey285ag" path="res://Bird/textures/textures/splatter.png" id="1_t2il4"]
+[ext_resource type="Script" uid="uid://1koux04wnofq" path="res://script/splat.gd" id="2_ha4rk"]
+
+[node name="Splat" type="Sprite3D" unique_id=1972971359]
+transform = Transform3D(0.35, 0, 0, 0, -1.5298985e-08, -0.35, 0, 0.35, -1.5298985e-08, 0, 0, 0)
+layers = 8
+texture = ExtResource("1_t2il4")
+script = ExtResource("2_ha4rk")
+
+[node name="Timer" type="Timer" parent="." unique_id=577425972]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

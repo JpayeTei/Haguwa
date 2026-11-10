@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b8d2klf2erria"]
+
+[ext_resource type="PackedScene" uid="uid://bsfavpm8vahvt" path="res://assets/obj/Man by Quaternius - HMnuH5geEG.glb" id="1_mjvwh"]
+
+[node name="Root Scene" unique_id=1195238899 instance=ExtResource("1_mjvwh")]
+
+[node name="Skeleton3D" parent="RootNode/HumanArmature" parent_id_path=PackedInt32Array(774886694) index="0" unique_id=2105135217]
+bones/1/position = Vector3(0.0038363924, 0.000600924, -0.0014867054)
+bones/1/rotation = Quaternion(0.13804384, 0.6825911, 0.70509213, -0.13363577)
+bones/2/position = Vector3(1.0737858e-06, 0.020799644, 0.0028547023)
+bones/2/rotation = Quaternion(-0.000517528, 0.003642998, 2.4427643e-05, 0.9999933)
+bones/4/rotation = Quaternion(0.08057471, 4.3696343e-07, 4.9987385e-08, 0.9967486)
+bones/5/rotation = Quaternion(0.011243589, -8.31912e-07, 2.760491e-09, 0.9999369)
+bones/6/rotation = Quaternion(0.08210647, 8.078287e-06, 0.00014098364, 0.9966236)
+bones/7/rotation = Quaternion(-0.11539909, -0.0001984842, 0.0030009248, 0.9933147)
+bones/8/position = Vector3(0.0024616905, 0.0048365323, 0.00030734454)
+bones/9/rotation = Quaternion(0.5641519, 0.3125053, 0.67322063, -0.36172798)
+bones/10/rotation = Quaternion(-0.033604812, -0.017689278, -0.18155001, 0.9826482)
+bones/11/rotation = Quaternion(-0.091587186, 0.011811333, -0.0010549205, 0.99572647)
+bones/13/rotation = Quaternion(-0.6273518, 0.010712001, -0.10510431, 0.7715362)
+bones/14/rotation = Quaternion(0.12705074, 0.888615, -0.1271158, 0.4219753)
+bones/15/rotation = Quaternion(0.4140074, 0.83793575, -0.17694926, -0.3084648)
+bones/16/position = Vector3(-0.0023196505, 0.0048284633, 0.0003788404)
+bones/17/rotation = Quaternion(-0.5965627, 0.35005078, 0.63685316, 0.3405812)
+bones/18/rotation = Quaternion(-0.036638822, -0.03563881, 0.059278045, 0.99693215)
+bones/20/rotation = Quaternion(0.033430085, 0.009062432, -0.00047846165, 0.99939996)
+bones/22/rotation = Quaternion(-0.09193239, 0.85566473, 0.50311804, 0.07911078)
+bones/23/rotation = Quaternion(-0.56752115, 0.020629605, 0.058192484, 0.8210407)
+bones/24/rotation = Quaternion(0.98162705, 0.054592133, -0.16253856, 0.08372246)
+bones/25/rotation = Quaternion(0.23033881, 1.0766896e-08, -4.211051e-08, 0.97311056)
+bones/26/rotation = Quaternion(0.9938355, -0.016999442, -0.009405955, 0.10914927)
+bones/27/rotation = Quaternion(0.24660204, -1.11115774e-07, 2.3544533e-08, 0.9691168)
+bones/28/position = Vector3(0.008241551, 0.010823511, 0.013281265)
+bones/29/position = Vector3(-0.0039839763, 0.000600924, -0.000673433)
+bones/29/rotation = Quaternion(-0.08532007, 0.6906272, 0.7133943, 0.0826022)
+
+[node name="Foot_L" parent="RootNode/HumanArmature/Skeleton3D" index="0" unique_id=1609143715]
+transform = Transform3D(-0.92617065, 0.37690642, 0.0122300815, -0.37710482, -0.9256836, -0.030026784, 3.8740504e-06, -0.03242205, 0.99947417, 0.0038044371, 0.0014895013, 0.0005420724)
+
+[node name="Head" parent="RootNode/HumanArmature/Skeleton3D" index="1" unique_id=908212311]
+transform = Transform3D(0.9999575, -0.006845134, 0.0061435704, 0.0066890954, 0.0827529, -0.9965477, 0.006313104, 0.9965463, 0.0827952, -6.794247e-05, -0.00078681635, 0.042120792)
+
+[node name="Fingers_L" parent="RootNode/HumanArmature/Skeleton3D" index="2" unique_id=1740650668]
+transform = Transform3D(-0.065932654, -0.9851156, 0.15874901, -0.9284138, 0.0022646785, -0.3715414, 0.36565182, -0.17188159, -0.9147441, 0.0067471378, -0.0027488742, 0.018544277)
+
+[node name="Thumb2_L" parent="RootNode/HumanArmature/Skeleton3D" index="3" unique_id=262837864]
+transform = Transform3D(-0.17720516, -0.14440906, 0.9735221, -0.89883983, 0.42664105, -0.10032448, -0.40085655, -0.89281833, -0.20540364, 0.006106158, -0.0037134606, 0.020694306)
+
+[node name="Thumb2_R" parent="RootNode/HumanArmature/Skeleton3D" index="4" unique_id=651925516]
+transform = Transform3D(-0.9771074, 0.20650843, -0.05116068, 0.17786387, 0.6609611, -0.7290374, -0.116737075, -0.721447, -0.68255985, -0.0069470596, -0.002449043, 0.020023284)
+
+[node name="Fingers_R" parent="RootNode/HumanArmature/Skeleton3D" index="5" unique_id=432319006]
+transform = Transform3D(-0.061756447, 0.91696936, -0.39415014, 0.99619687, 0.032311708, -0.08091556, -0.061461642, -0.39764816, -0.91547745, -0.00767449, -0.00065212575, 0.018525068)
+
+[node name="LowerLeg_L" parent="RootNode/HumanArmature/Skeleton3D" index="6" unique_id=1545942166]
+transform = Transform3D(0.93878055, -0.0208629, -0.34388417, 0.33517733, 0.2861225, 0.897664, 0.07966464, -0.95796716, 0.2755951, 0.004074821, -0.002219125, 0.0129590435)
+
+[node name="LowerLeg_R" parent="RootNode/HumanArmature/Skeleton3D" index="7" unique_id=1538297882]
+transform = Transform3D(0.99911106, -0.04054314, -0.011530817, 0.022228664, 0.27437392, 0.9613748, -0.035813086, -0.96077025, 0.27502546, -0.003492109, -0.0028686589, 0.012955264)
+
+[node name="PoleTarget_L" parent="RootNode/HumanArmature/Skeleton3D" index="8" unique_id=207751475]
+transform = Transform3D(1, 7.1054274e-14, 7.152558e-07, 7.1525585e-07, -1.1920929e-07, -0.99999994, 5.6843426e-14, 0.99999994, -1.1920929e-07, 0.008209603, -0.013278468, 0.010764656)
+
+[node name="Foot_R" parent="RootNode/HumanArmature/Skeleton3D" index="9" unique_id=1019761156]
+transform = Transform3D(-0.97179484, -0.23570408, -0.007639028, 0.2358279, -0.9712836, -0.03150916, 7.18067e-06, -0.03242193, 0.9994742, -0.0040159314, 0.0006762253, 0.0005420723)

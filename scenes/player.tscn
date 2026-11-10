@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://ftprso0n4kqu"]
+
+[ext_resource type="Script" uid="uid://iyqmgtd51ws0" path="res://script/player.gd" id="1_u3nas"]
+[ext_resource type="Script" uid="uid://fup4ty7ugv88" path="res://resources/BirdStats.gd" id="2_smehm"]
+[ext_resource type="PackedScene" uid="uid://pgbi51am4gcb" path="res://Bird/scene/poop.tscn" id="3_ur7pv"]
+[ext_resource type="PackedScene" uid="uid://3m04hypqtvro" path="res://scenes/splat.tscn" id="4_y4r1p"]
+[ext_resource type="PackedScene" uid="uid://bog2sgu2qdp70" path="res://assets/obj/animated_bird_pigeon.glb" id="5_fjrip"]
+[ext_resource type="AnimationLibrary" uid="uid://s54joixadlmq" path="res://assets/animation/.res" id="6_smehm"]
+[ext_resource type="Texture2D" uid="uid://dittu8fe2j40m" path="res://assets/png/shadow.png" id="8_dslrs"]
+[ext_resource type="AudioStream" uid="uid://bobt2666ir0m0" path="res://assets/sfx/NaturalAmbience.wav" id="8_smehm"]
+
+[sub_resource type="Resource" id="Resource_qlg0r"]
+script = ExtResource("2_smehm")
+metadata/_custom_type_script = "uid://fup4ty7ugv88"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_smehm"]
+size = Vector3(0.48450089, 0.44766235, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vraiv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgyg5"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("8_dslrs")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fm8bi"]
+material = SubResource("StandardMaterial3D_dgyg5")
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t5jfb"]
+playback_mode = 1
+streams_count = 1
+stream_0/stream = ExtResource("8_smehm")
+
+[node name="Player" type="CharacterBody3D" unique_id=1769111243]
+collision_mask = 32770
+script = ExtResource("1_u3nas")
+owl_stats = SubResource("Resource_qlg0r")
+poop = ExtResource("3_ur7pv")
+splat = ExtResource("4_y4r1p")
+deceleration = 10.0
+landing_distance_threshold = 3.0
+
+[node name="Pivot" type="Node3D" parent="." unique_id=966253907]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0.813725, 0)
+
+[node name="Sketchfab_Scene" parent="Pivot" unique_id=1681128869 instance=ExtResource("5_fjrip")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Sketchfab_model" parent="Pivot/Sketchfab_Scene" index="0" unique_id=79410034]
+transform = Transform3D(8.723257, 0, 0, 0, 1.9369524e-15, 8.723258, 0, -8.723257, 1.9369522e-15, 0, -0.11678815, 0)
+
+[node name="Skeleton3D" parent="Pivot/Sketchfab_Scene/Sketchfab_model/bird animation tweaks_fbx/Object_2/RootNode/BirdRig/Object_5" parent_id_path=PackedInt32Array(1681128869, 285667868) index="0" unique_id=1782003345]
+bones/2/position = Vector3(9.8587805e-14, 0.014961807, -0.037788883)
+bones/2/rotation = Quaternion(0.9382826, 0.0019880095, -0.0008257891, 0.3458632)
+bones/2/scale = Vector3(1.0342586, 0.9366376, 1.0342636)
+bones/3/rotation = Quaternion(0.07785259, -0.00017772127, -0.0039643906, 0.99695706)
+bones/3/scale = Vector3(1.058325, 0.8931294, 1.0606409)
+bones/4/rotation = Quaternion(-0.23224388, -0.0017506017, 0.0014755827, 0.972655)
+bones/4/scale = Vector3(1.0263792, 0.9164201, 1.0931412)
+bones/5/rotation = Quaternion(-0.09515869, -0.0008772574, -0.0012110266, 0.995461)
+bones/5/scale = Vector3(1.0298047, 0.9335471, 1.0497153)
+bones/6/rotation = Quaternion(-0.035671107, -0.00021640657, -0.0037396227, 0.99935657)
+bones/6/scale = Vector3(1.0630414, 0.8820143, 1.0691404)
+bones/7/rotation = Quaternion(0.3851405, 0.0023908003, 0.012647604, 0.9227682)
+bones/7/scale = Vector3(0.7620246, 1.1916096, 1.1495267)
+bones/9/position = Vector3(-5.6698748e-18, -0.026478477, -0.025471618)
+bones/9/rotation = Quaternion(-0.30821663, 0, 0, 0.9513162)
+bones/14/rotation = Quaternion(0.13193616, 2.5717552e-05, 0.0013746517, 0.9912573)
+bones/15/rotation = Quaternion(0.06611661, 0.00011598393, 0.00137003, 0.99781096)
+bones/16/rotation = Quaternion(0.029666845, 7.979033e-05, 0.0010256997, 0.99955934)
+bones/19/rotation = Quaternion(0.9888462, 0.14796425, 0.01162089, 0.012438213)
+bones/21/rotation = Quaternion(0.9896151, -0.14261495, -0.0118267415, 0.0135379555)
+bones/24/rotation = Quaternion(-0.029666513, -8.246335e-05, 0.0010306329, 0.9995594)
+bones/25/rotation = Quaternion(-0.06611684, 0.00014927084, 0.0013892971, 0.9978109)
+bones/26/position = Vector3(0.00026143208, -0.0101872, -0.0026056715)
+bones/26/rotation = Quaternion(0.07102775, -3.0360603e-05, -3.0917003e-05, 0.99747443)
+bones/28/position = Vector3(-1.7787097e-06, 0.0017902572, -0.0020939838)
+bones/28/rotation = Quaternion(0.030356301, -1.1852415e-05, -1.8502758e-05, 0.9995392)
+bones/35/rotation = Quaternion(-0.0011961684, -0.047950678, 0.99884063, 0.0041064043)
+bones/35/scale = Vector3(0.9900279, 0.99002826, 0.99002963)
+bones/36/rotation = Quaternion(0.5456851, -0.00015331546, 9.991908e-05, 0.8379904)
+bones/36/scale = Vector3(0.99815696, 0.99815655, 0.9981571)
+bones/37/rotation = Quaternion(0.33715782, 0.000590384, 0.0009380877, 0.9414475)
+bones/37/scale = Vector3(0.7751968, 0.77519697, 0.7751966)
+bones/51/rotation = Quaternion(-0.0011896119, -0.049656045, 0.99875844, 0.0038006604)
+bones/51/scale = Vector3(0.9900603, 0.9900604, 0.9900612)
+bones/52/rotation = Quaternion(0.5481797, -0.00015293769, 0.0001004338, 0.83636063)
+bones/52/scale = Vector3(0.99875426, 0.9987538, 0.9987542)
+bones/53/rotation = Quaternion(0.33595896, 0.0005921126, 0.00093866896, 0.94187605)
+bones/53/scale = Vector3(0.7751684, 0.77516866, 0.7751679)
+bones/67/rotation = Quaternion(-0.00066998415, -0.047952976, 0.9988421, 0.003804665)
+bones/67/scale = Vector3(1.0067785, 0.9900287, 1.0067796)
+bones/68/rotation = Quaternion(-2.38563e-07, 0.00024002953, -2.7008511e-08, 1)
+bones/69/rotation = Quaternion(0.5456708, 7.630945e-05, -4.8304682e-05, 0.83799976)
+bones/69/scale = Vector3(1.0016781, 0.98868203, 1.0110495)
+bones/70/rotation = Quaternion(2.2570607e-07, 0.00024487823, 1.7005361e-07, 1)
+bones/71/rotation = Quaternion(0.33715776, 0.0003557056, 0.0010243001, 0.9414475)
+bones/71/scale = Vector3(1.1338353, 0.770344, 1.1411029)
+bones/74/rotation = Quaternion(-0.0005464154, -0.04965964, 0.9987653, 0.0012192634)
+bones/74/scale = Vector3(1.0068475, 0.99006075, 1.0068483)
+bones/75/rotation = Quaternion(1.2077652e-07, 0.00024140839, 2.8936636e-08, 1)
+bones/76/rotation = Quaternion(0.5481651, 7.650089e-05, -5.1301664e-05, 0.8363701)
+bones/76/scale = Vector3(1.0001671, 0.98622674, 1.0134821)
+bones/77/rotation = Quaternion(-3.6127125e-07, 0.0002460629, 7.889765e-08, 1)
+bones/78/rotation = Quaternion(0.33596122, 0.00035870078, 0.0010266212, 0.9418753)
+bones/78/scale = Vector3(1.1337142, 0.7700459, 1.1425028)
+bones/81/position = Vector3(0.00026142693, 0.027103378, 0.0037650308)
+bones/81/rotation = Quaternion(0.9767397, 3.5292513e-05, -2.464812e-05, -0.21442844)
+bones/86/rotation = Quaternion(0.57437396, 0.5164539, 0.55274963, 0.31279045)
+bones/86/scale = Vector3(1.3717618, 0.5324001, 1.3717636)
+bones/87/rotation = Quaternion(-0.3877737, -0.016813647, 0.41430873, 0.82322377)
+bones/87/scale = Vector3(1.3893224, 1.0875179, 1.23263)
+bones/88/rotation = Quaternion(0.8854492, 0.09724219, 0.42184383, 0.16903095)
+bones/88/scale = Vector3(0.9925983, 1.0198222, 0.99029785)
+bones/89/rotation = Quaternion(0.006650381, -0.72613335, -0.018533261, 0.68727195)
+bones/91/position = Vector3(-0.012825584, 0.047041286, 0.007830347)
+bones/91/rotation = Quaternion(-0.18287785, -0.85406625, 0.03024913, 0.48601604)
+bones/93/position = Vector3(-0.00032416685, 0.019711833, 0.008297883)
+bones/93/rotation = Quaternion(0.46072948, -0.17879568, -0.868778, 0.031389248)
+bones/95/rotation = Quaternion(-0.5750115, 0.25746465, 0.6059704, -0.48566842)
+bones/97/rotation = Quaternion(0.5743739, 0.51645404, 0.5527495, 0.3127904)
+bones/97/scale = Vector3(1.3717618, 0.5323997, 1.3717635)
+bones/98/rotation = Quaternion(-0.3877736, -0.01681405, 0.41430867, 0.82322365)
+bones/98/scale = Vector3(1.3893223, 1.087518, 1.2326301)
+bones/99/rotation = Quaternion(0.8854494, 0.097242266, 0.4218434, 0.16903093)
+bones/99/scale = Vector3(0.99259806, 1.0198221, 0.9902975)
+bones/102/rotation = Quaternion(-0.5743688, 0.5164463, 0.5527569, -0.31279972)
+bones/102/scale = Vector3(1.3717625, 0.53239995, 1.3717632)
+bones/103/rotation = Quaternion(-0.38812324, 0.016852228, -0.41395214, 0.82323754)
+bones/103/scale = Vector3(1.3893695, 1.0868777, 1.2326248)
+bones/104/rotation = Quaternion(0.8856572, -0.09803975, -0.4218712, 0.16740489)
+bones/104/scale = Vector3(0.9922849, 1.0199027, 0.99032533)
+bones/105/rotation = Quaternion(0.006650403, 0.7261333, 0.01853309, 0.687272)
+bones/107/position = Vector3(0.01282556, 0.047041282, 0.007830352)
+bones/107/rotation = Quaternion(-0.18287757, 0.85406643, -0.030248959, 0.48601586)
+bones/109/position = Vector3(0.00032416405, 0.019711867, 0.0082978895)
+bones/109/rotation = Quaternion(0.46072954, 0.17879574, 0.86877793, 0.03138883)
+bones/111/rotation = Quaternion(0.5750113, 0.25746453, 0.6059706, 0.48566818)
+bones/113/rotation = Quaternion(-0.5743686, 0.5164464, 0.55275697, -0.31279954)
+bones/113/scale = Vector3(1.3717628, 0.53239995, 1.371763)
+bones/114/rotation = Quaternion(-0.38812345, 0.016852356, -0.41395217, 0.8232374)
+bones/114/scale = Vector3(1.3893691, 1.0868777, 1.232625)
+bones/115/rotation = Quaternion(0.8856571, -0.09803982, -0.4218713, 0.16740508)
+bones/115/scale = Vector3(0.99228483, 1.0199022, 0.99032515)
+bones/117/position = Vector3(0.00026143363, 0.020895038, 0.0016410677)
+bones/117/rotation = Quaternion(0.9032402, 3.9935498e-05, -1.6804974e-05, -0.42913562)
+bones/119/position = Vector3(0.00026143147, 0.016795237, 0.00022610836)
+bones/119/rotation = Quaternion(-0.8393761, -4.183706e-05, 1.1392752e-05, 0.543551)
+bones/121/position = Vector3(0.000261554, 0.010773141, -0.0005806992)
+bones/121/rotation = Quaternion(-0.7975193, -7.2597104e-05, -3.1367214e-05, 0.6032934)
+bones/122/position = Vector3(-4.611138e-10, 2.7311842e-09, 7.750032e-10)
+bones/122/rotation = Quaternion(0.9656653, 1.2527782e-07, 4.597465e-07, 0.2597895)
+
+[node name="Object_144" parent="Pivot/Sketchfab_Scene/Sketchfab_model/bird animation tweaks_fbx/Object_2/RootNode/BirdRig/Object_5/Skeleton3D" index="0" unique_id=26282905]
+transform = Transform3D(0.56, 3.5527137e-14, -1.4199496e-29, -3.5527137e-14, 0.56, 2.646978e-23, 7.888609e-30, 2.646978e-23, 0.5600001, -0.0004913825, -0.020451486, -0.03866153)
+
+[node name="AnimationPlayer" parent="Pivot/Sketchfab_Scene" index="1" unique_id=1792966026]
+libraries/ = ExtResource("6_smehm")
+autoplay = &"BirdRig|Flapping"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Pivot/Sketchfab_Scene" unique_id=579149529]
+"libraries/ 2" = ExtResource("6_smehm")
+autoplay = &" 2/BirdRig|Flapping"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=487759923]
+transform = Transform3D(1, 0, 0, 0, 0.658847, 0.752277, 0, -0.752277, 0.658847, -0.92551804, 5.398344, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=591951938]
+transform = Transform3D(1.2533073, 0, 0, 0, 1.2533073, 0, 0, 0, 1.2533073, 0.009205818, 0.21994954, -0.16112846)
+shape = SubResource("BoxShape3D_smehm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=60155755]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=604256829]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_vraiv")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=825596875]
+transform = Transform3D(0.99965346, -0.026324889, 0, 0.026324889, 0.99965346, 0, 0, 0, 1, 0.00019444525, 0.016621891, -0.38087425)
+
+[node name="ShadowAim" type="MeshInstance3D" parent="." unique_id=1562010734]
+mesh = SubResource("PlaneMesh_fm8bi")
+
+[node name="GroundRay" type="RayCast3D" parent="." unique_id=1521213390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0046141967, -0.096369505, -0.37498543)
+target_position = Vector3(0, -100, 0)
+collision_mask = 2
+
+[node name="LandingRay" type="RayCast3D" parent="." unique_id=1633236502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0046141967, -0.096369505, -0.37498543)
+collision_mask = 2
+
+[node name="NaturalAmbience" type="AudioStreamPlayer3D" parent="." unique_id=2062709547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4398193, 11.781128)
+stream = SubResource("AudioStreamRandomizer_t5jfb")
+autoplay = true
+
+[connection signal="animation_finished" from="Pivot/Sketchfab_Scene/AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]
+
+[editable path="Pivot/Sketchfab_Scene"]
