@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ftprso0n4kqu"]
+
+[ext_resource type="Script" uid="uid://iyqmgtd51ws0" path="res://script/player.gd" id="1_u3nas"]
+[ext_resource type="PackedScene" uid="uid://b5lm8jsj8u08i" path="res://Bird/scene/owl_figure.tscn" id="2_62x81"]
+[ext_resource type="Script" uid="uid://fup4ty7ugv88" path="res://resources/BirdStats.gd" id="2_vraiv"]
+[ext_resource type="Texture2D" uid="uid://c47f1n7b5iddf" path="res://Bird/textures/textures/owl.png" id="3_c7ula"]
+[ext_resource type="Script" uid="uid://bhe2qxf6ni8dp" path="res://script/camera_spring_arm.gd" id="4_c7ula"]
+
+[sub_resource type="Resource" id="Resource_2n7uy"]
+script = ExtResource("2_vraiv")
+metadata/_custom_type_script = "uid://fup4ty7ugv88"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3nas"]
+albedo_texture = ExtResource("3_c7ula")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62x81"]
+radius = 0.22607422
+height = 0.9242649
+
+[node name="Player" type="CharacterBody3D" unique_id=1769111243]
+script = ExtResource("1_u3nas")
+owl_stats = SubResource("Resource_2n7uy")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=966253907]
+transform = Transform3D(-0.99946, 0, -0.03285857, 0, 1, 0, 0.03285857, 0, -0.99946, 0, 0, 0)
+
+[node name="owl_Figure" parent="Pivot" unique_id=1859698857 instance=ExtResource("2_62x81")]
+transform = Transform3D(-0.9998477, 0, -0.017452395, 0, 1, 0, 0.017452395, 0, -0.9998477, -0.80992293, 0, 0)
+material_override = SubResource("StandardMaterial3D_u3nas")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=487759923]
+transform = Transform3D(1, 0, 0, 0, 0.18645549, -0.9824634, 0, 0.9824634, 0.18645549, 2.7474365, 76.927795, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=591951938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46345043, 0)
+shape = SubResource("CapsuleShape3D_62x81")
+
+[node name="CameraSpringArm" type="SpringArm3D" parent="." unique_id=556220294]
+transform = Transform3D(-0.9997473, -0.0016159423, 0.022423614, -0.002525506, 0.9991725, -0.04059392, -0.022339456, -0.04064028, -0.9989241, 0.0012786388, 0.47290492, 0)
+collision_mask = 2
+spring_length = 3.0
+script = ExtResource("4_c7ula")
+
+[node name="Camera3D" type="Camera3D" parent="CameraSpringArm" unique_id=182467368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.196, 2.756)
